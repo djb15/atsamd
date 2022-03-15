@@ -20,7 +20,7 @@ pub mod pwm;
 pub mod watchdog;
 
 #[cfg(feature = "usb")]
-#[cfg(feature = "samd21")]
+#[cfg(any(feature = "samd21", feature = "samd11"))]
 pub mod usb;
 
 pub(crate) mod sercom;
