@@ -116,12 +116,9 @@ pub mod timer_traits;
 #[cfg(all(feature = "unproven", feature = "dma"))]
 pub mod dmac;
 
-#[cfg(all(feature = "usb", feature = "samd11"))]
-compile_error!("'usb' is enabled, but USB isn't supported on SAMD11");
-
 #[cfg(all(
     feature = "usb",
-    not(any(feature = "samd21", feature = "min-samd51g", feature = "library"))
+    not(any(feature = "samd11", feature = "samd21", feature = "min-samd51g", feature = "library"))
 ))]
 compile_error!("The 'usb' feature is enabled, but not a chip with USB support");
 
