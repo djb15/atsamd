@@ -1,9 +1,9 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    // TODO: What length should this actually be?
     _reserved_0_host: [u8; 0x0111],
 }
-
 impl RegisterBlock {
     #[doc = "0x00..0x111 - USB is Device"]
     #[inline(always)]
@@ -11,7 +11,6 @@ impl RegisterBlock {
         unsafe { &*(((self as *const Self) as *const u8).add(0usize) as *const DEVICE) }
     }
 }
-
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct DEVICE {

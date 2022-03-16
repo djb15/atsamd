@@ -691,7 +691,7 @@ impl Inner {
             w.transp().bits(usb_transp_cal());
             w.trim().bits(usb_trim_cal())
         });
-        usb.qosctrl.modify(|_, w| {
+        usb.qosctrl.modify(|_, w| unsafe {
             w.dqos().bits(0b11);
             w.cqos().bits(0b11)
         });
