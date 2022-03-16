@@ -395,7 +395,7 @@ impl GenericClockController {
 }
 
 // samd11
-#[cfg(feature = "samd11")]
+#[cfg(feature = "samd11c")]
 clock_generator!(
     (tcc0, Tcc0Clock, TCC0),
     (tc1_tc2, Tc1Tc2Clock, TC1_TC2),
@@ -416,6 +416,31 @@ clock_generator!(
     (ac_dig, AcDigClock, AC_DIG),
     (dac, DacClock, DAC),
 );
+
+// samd11
+#[cfg(feature = "samd11d")]
+clock_generator!(
+    (tcc0, Tcc0Clock, TCC0),
+    (tc1_tc2, Tc1Tc2Clock, TC1_TC2),
+    (sercom0_core, Sercom0CoreClock, SERCOM0_CORE),
+    (sercom1_core, Sercom1CoreClock, SERCOM1_CORE),
+    (sercom2_core, Sercom2CoreClock, SERCOM2_CORE),
+    (usb, UsbClock, USB),
+    (rtc, RtcClock, RTC),
+    (adc, AdcClock, ADC),
+    (wdt, WdtClock, WDT),
+    (eic, EicClock, EIC),
+    (evsys0, Evsys0Clock, EVSYS_0),
+    (evsys1, Evsys1Clock, EVSYS_1),
+    (evsys2, Evsys2Clock, EVSYS_2),
+    (evsys3, Evsys3Clock, EVSYS_3),
+    (evsys4, Evsys4Clock, EVSYS_4),
+    (evsys5, Evsys5Clock, EVSYS_5),
+    (ac_ana, AcAnaClock, AC_ANA),
+    (ac_dig, AcDigClock, AC_DIG),
+    (dac, DacClock, DAC),
+);
+
 // samd21
 #[cfg(feature = "samd21")]
 clock_generator!(
